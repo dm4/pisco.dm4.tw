@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- marked -->
+    <script src="https://cdn.rawgit.com/chjj/marked/v0.3.6/marked.min.js"></script>
+
+    <!-- Custom style -->
+    <style>
+      body {
+        padding-top: 50px;
+      }
+    </style>
+
+    <!-- Custom script -->
+    <script>
+      $(document).ready(function() {
+        document.getElementById('lyric').innerHTML = marked(document.getElementById('lyric_being_pisco').innerHTML);
+        $('ul.dropdown-menu > li > a').each(function() {
+          $(this).click(function(event) {
+            event.preventDefault();
+            var song = $(this).text();
+            var album = $(this).parent().parent().attr('album');
+            $('#lyric').html(marked(document.getElementById('lyric_' + album).innerHTML));
+            var anchor = $.parseHTML(marked('### ' + song))[0].id;
+            var top = document.getElementById(anchor).offsetTop;
+            window.scrollTo(0, top - 10);
+            $('.navbar-collapse').collapse('hide')
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">P!SCO</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BEING P!SCO <span class="caret"></span></a>
+              <ul album="being_pisco" class="dropdown-menu">
+                <li><a href="#">1. 一起飛吧</a></li>
+                <li><a href="#">2. 唱給你聽</a></li>
+                <li><a href="#">3. Penguin Disco</a></li>
+                <li><a href="#">4. BEING P!SCO</a></li>
+                <li><a href="#">5. 漸漸</a></li>
+                <li><a href="#">6. 如果爆炸了</a></li>
+                <li><a href="#">7. 每個人都歡快的嚼著</a></li>
+                <li><a href="#">8. 說傻話</a></li>
+                <li><a href="#">9. 嘿！晚安！</a></li>
+                <li><a href="#">10. 中二夜晚</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ReStart <span class="caret"></span></a>
+              <ul album="restart" class="dropdown-menu">
+                <li><a href="#">1. 怎哭了</a></li>
+                <li><a href="#">2. Can't Stop My Love For You</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">StartUp 登板 <span class="caret"></span></a>
+              <ul album="startup" class="dropdown-menu">
+                <li><a href="#">1. Intro</a></li>
+                <li><a href="#">2. I Wish You Love</a></li>
+                <li><a href="#">3. 百花香</a></li>
+                <li><a href="#">4. Dancing All Night</a></li>
+                <li><a href="#">5. 黑色俄羅斯</a></li>
+                <li><a href="#">6. 花樣年華</a></li>
+                <li><a href="#">7. 好時光</a></li>
+                <li><a href="#">8. I Love You</a></li>
+                <li><a href="#">9. 跳吧! Babe! (Album Ver.)</a></li>
+                <li><a href="#">10. 我的 (Album Ver.)</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DANCE! <span class="caret"></span></a>
+              <ul album="dance" class="dropdown-menu">
+                <li><a href="#">1. 跳吧! Babe!</a></li>
+                <li><a href="#">2. 跳吧! Babe! (Unplugged Ver.)</a></li>
+                <li><a href="#">3. 跳吧! Babe! (Piano Ver.)</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SELFISH <span class="caret"></span></a>
+              <ul album="selfish" class="dropdown-menu">
+                <li><a href="#">1. We Make You High</a></li>
+                <li><a href="#">2. We Are So Beautiful</a></li>
+                <li><a href="#">3. 我的</a></li>
+                <li><a href="#">4. 自己</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-1 col-md-2 col-lg-3" style="background-color: black;"></div>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+            <div id="lyric"></div>
+        </div>
+        <div class="col-sm-1 col-md-2 col-lg-3" style="background-color: black;"></div>
+      </div>
+    </div><!-- /.container -->
+    <div id="lyric_being_pisco" style="display: none;">
+# BEING P!SCO
+
+### 1. 一起飛吧
+
+嘿！你好！  
+我們是：Ｐ！ＳＣＯ  
+接下來，把心交給我，因為我們要，一起飛啦！  
+接下來，把心交給我，因為我們要，一起飛啦！  
+
+### 2. 唱給你聽
+
+海邊的浪花直直打過來  
+百花的香味直直打過來  
+你的笑容直直打過來  
+我們的掌聲直直打過來  
+
+思念故鄉的感情  
+不願放棄的希望  
+未來怎麼樣  
+我現在就來唱給你聽  
+唱給你聽  
+
+海邊的浪花直直打過來  
+百花的香味直直打過來  
+你的笑容直直打過來  
+我們的掌聲直直打過來  
+思念故鄉的感情  
+
+不願放棄的希望  
+未來怎麼樣  
+我現在就來唱給你聽唱給你聽  
+
+唱給你聽 唱給你聽 唱給你聽  
+
+### 3. Penguin Disco
+
+我的翅膀不是拿來飛翔  
+我的翅膀也不是很長  
+遇到陣陣大風會更堅強  
+可以跳舞 趾高氣昂  
+
+Penguin Disco  
+Penguin Disco  
+Penguin Disco  
+Penguin Penguin Disco  
+
+我的翅膀不是拿來飛翔  
+我的翅膀也不是很長  
+遇到陣陣大風會更堅強  
+可以跳舞 趾高氣昂  
+
+Penguin Disco  
+Penguin Disco  
+Penguin Disco  
+Penguin Penguin Disco  
+
+咱的未來到底會變成什麼模樣  
+迷路的孩子你千萬先不要悲傷  
+因為現在我要為你唱一首歌  
+什麼都不用想我們一起跳舞就好啦  
+
+### 4. BEING P!SCO
+
+噢！談論秋天那些事情太文青  
+拿出勇氣亮出一吻，雨就會停  
+我走進愛的遊行  
+
+噢！湧上一嘴甜腥 抹抹眼角  
+噢！躺入眼前大道 警笛喧鬧  
+荊棘拒馬擋不住任性  
+
+藍色的天上有彩虹最美  
+你喲！我們的愛除不盡  
+藍色的天上有彩虹最美  
+愛喲！我們的愛除不盡  
+
+P!SCO 打翻吧彩色情緒  
+P!SCO 別猶豫一起衝吧  
+P!SCO 一踏糊塗也 不怕  
+P!SCO 讓我們 being P!SCO  
+
+### 5. 漸漸
+
+天色漸漸會光 花蕊漸漸會開  
+烏雲漸漸會散 人總會離開  
+窗外陣陣落雨聲 悲歌永遠唱不完  
+就像一粒風飛沙 無人心疼  
+春風微微人無依 看天星腳步輕鬆  
+你甘有真的在聽 心愛的再會啦  
+天色漸漸會光 花蕊漸漸會開  
+烏雲漸漸會散 人總會離開  
+窗外陣陣落雨聲 悲歌永遠唱不完  
+就像一粒風飛沙 無人心疼  
+春風微微人無依 看天星腳步輕鬆  
+你甘有真的在聽 心愛的再會啦  
+
+### 6. 如果爆炸了
+
+檢視自己的重量  
+腳踏著這片土地  
+繼續著每天呼吸  
+唱出安慰的力量  
+
+人生的路途茫茫  
+曬著一樣的月光  
+天空不再透明了  
+就快要失去方向  
+
+在灰色的世界睡著了  
+冷漠變成了一種溫柔  
+這個動人聲音是什麼  
+慌亂的雨快把我淹沒  
+倒數時間仍舊在沈默  
+爆炸過後謝謝再聯絡  
+
+謝謝再聯絡  
+謝謝再聯絡  
+謝謝再聯絡  
+謝謝再聯絡  
+
+### 7. 每個人都歡快的嚼著
+
+微笑地垮下來  
+逐漸崩塌的時代  
+我想要吃什麼  
+不要你管  
+槍枝裡的鮮花  
+通通都拿去煮湯  
+韓賽爾葛麗特  
+忘了回家  
+
+想想嘗嘗美味人生  
+自己決定最是滋補  
+鍋碗瓢盆煮食人生  
+想吃什麼我來做主  
+
+想想當個神秘顧客  
+只有我能來當評審  
+柴米油鹽海海人生  
+沙拉拉拉嘴裡跳舞  
+
+哪裡來的挑剔食客  
+閉上嘴巴自己來煮  
+每個人都歡快嚼著  
+自己決定自己的路  
+
+哪裡來的挑剔食客  
+閉上嘴巴自己來煮  
+每個人都歡快嚼著  
+沙拉拉拉用力跳舞  
+
+### 8. 說傻話
+
+那一顆痣  
+住在臉頰上  
+它屬於那個人  
+像是我屬於他  
+拿了蘋果也摘取鮮花  
+那就這樣  
+鬧鐘怎也叫不響  
+
+那一顆痣  
+住在臉頰上  
+它屬於那個人  
+像是我屬於他  
+一杯豆漿一杯早茶  
+那就這樣  
+他煎培根  
+我說傻話  
+
+說傻話 說傻話  
+說傻話  
+說傻話  
+說傻話 說傻話  
+說傻話  
+
+### 9. 嘿！晚安！
+
+睡前情緒還是很高漲  
+今天又平安地度過了  
+感恩人海茫茫遇見你  
+腦袋要被思念塞爆了  
+
+嘿！晚安！閉上眼睛睡覺了  
+我們夢中期待明天也是個大晴天  
+嘿！吾愛！背景是炫目彩虹  
+靈魂一個個通通都被治癒了  
+
+或許在一陣狂歡之後  
+我們重新認識自己  
+當吉他破音在副歌聲響起  
+噪音讓和弦完美  
+(嘿！晚安！嘿！晚安！嘿！晚安！嘿！晚安！)  
+
+### 10. 中二夜晚
+
+tonight party night,  
+everything will be alright  
+tonight dance night,  
+don't want to say goodbye  
+
+你這個甜美食材  
+下鍋的時間剛好  
+開動了彩色時光  
+攪動了魔幻力量  
+就在這中二夜晚  
+跳舞的時間剛好  
+寶貝你閃閃發光  
+腎上腺素在飆漲  
+
+這麼多人都還不睡啊？  
+(P!SCO)我們一起舉杯同歡(peace peace)  
+痴心絕對 跟我起身唱吧  
+(P!SCO)開始冒險 現在集氣(peace peace)  
+這麼多人都還不睡啊？  
+(P!SCO)我們一起舉杯同歡 (peace peace)  
+痴心絕對 跟我起身唱吧  
+(P!SCO)開始冒險 現在集氣(peace peace)  
+
+    </div>
+    <div id="lyric_startup" style="display: none;">
+
+# StartUp 登板
+
+### 1. Intro
+
+### 2. I Wish You Love
+
+I heard the flowers in the window  
+The fragrances was hard to hide  
+I covered up sadness with make up  
+Swayed to the sky  
+
+I heard the moonlight at seaside  
+My Sentiment was hard to stop  
+Tube riding was so high  
+Explosion in the sky  
+
+Love~  
+
+Gliding water, I wish you love  
+Lifted Cloud, I wish you love  
+Reaching the sky, I wish you love  
+Without shadows, I wish you love  
+
+### 3. 百花香
+
+百花盛開百味香  
+花樣色彩真迷人  
+漫步走進百花巷  
+百看不厭真輕鬆  
+
+你對我一笑表情意  
+害我六慾飛上天  
+害我七情半空飛  
+
+紅花開 白花美  
+蝶花採 結相隨  
+
+### 4. Dancing All Night
+
+有雲飛過今晚星空  
+腳下步伐濺起水花   
+淋濕的表情沒有理由   
+整夜跳舞不必人懂  
+
+I want dancing dancing alone  
+I want dancing dancing allnight  
+
+### 5. 黑色俄羅斯
+
+從星星吹來的風 被丟到水坑的臉  
+在月球看到的夢 被偷走寂寞的鞋  
+
+聽我說別想太多 跟我走一起做夢  
+小貓咪跟我唱歌不要咬我  
+
+許多話悶著說不出口  
+許多話聽了就暴走  
+剪了髮忘記你的冷漠  
+Si Re Fa Re Si Re Re Do  
+
+從星星吹來的風 被丟到水坑的臉  
+在月球看到的夢 被偷走寂寞的鞋  
+
+冷冽的水滴滑落 被紅色迷惑的蝶  
+在即將黎明的空 談著魔鬼的愛情  
+
+從星星吹來的風 黑色俄羅斯的夢  
+
+### 6. 花樣年華
+
+是錯是對摸索 是愛是恨享受  
+是眼是口爭奪 是幻是夢揮霍  
+是癲是瘋蹉跎 是濕是淚慌恐  
+是生是死迷惑 是真是假是我  
+
+是錯是對摸索 是愛是恨享受  
+是眼是口爭奪 是幻是夢揮霍  
+是癲是瘋蹉跎 是濕是淚慌恐  
+是生是死迷惑 是人是魂是我  
+
+曾經以為愛著誰 盛情卻心力交瘁  
+奉獻最後紅花蕊 化煙後看似悽美  
+昨夜纏綿已冷卻 缺口間搖搖欲墜   
+妳言詞顯得迂迴 我驅殼逐漸凋謝  
+
+### 7. 好時光
+
+任性站在波浪上攔截貪心的海洋  
+你燙的傷 冷不防  
+惡魔的威士忌糖飛上枝頭當鳳凰  
+嘴角的傷 太倡狂  
+
+怎麼藍天太藍把靈魂都釋放  
+聽著山嵐海風盡情的歡唱  
+好心的太陽彷彿置身天堂  
+等不及品嚐 所有的好時光  
+
+怎麼不稀罕了透過煙圈的香  
+屋簷蒐集的雨讓音符太流暢  
+積水的街道閃著最耀的芒  
+不小心就擁有整座城市的月光  
+
+### 8. I Love You
+
+穿上西裝襯托藍色天空  
+橫衝直撞闖入你的夢中  
+白色雲朵是抓不住的雙手  
+微波被放進冰箱的溫柔  
+
+摔壞面子表演落落大方  
+呼吸被你呼吸過的空氣  
+綻放的花朵孤單跳著TENGO  
+解除被雨水封印的心魔!!  
+
+I LOVE YOU I LOVE YOU  
+I LOVE YOU I LOVE YOU BABE  
+
+### 9. 跳吧! Babe! (Album Ver.)
+
+月光落在你冷酷的肩膀  
+衝動吻上致命的語言  
+不滿足的沉醉在自我堅強  
+高漲的情緒因喜悅而飛揚  
+
+褪去所有矯飾赤裸告白  
+徘徊你所有喜好的舞台  
+嘲笑他們承諾的表面主張  
+帶著激情我們要唱到沸點  
+
+跳吧! BABE!  
+
+我喜歡看著你隨節拍揮霍身體  
+讓音符帶著你狂舞吧飛向天際  
+
+### 10. 我的 (Album Ver.)
+
+走在任性放縱的日子裡心中的火焰澆不熄  
+站立在雨水中也拚命睜開眼卻已看不清  
+早點醒來吧 腦裡迴盪的聲音  
+早點醒來吧 手無寸鐵面對打擊  
+
+時間過去傷口它會癒合 但是留下的疤痕呢  
+淬鍊過的羽翼朝夢境奔去 奔去現實的樂園  
+別留在黑暗裡 崩壞的沙城看不見  
+早點醒來吧 殘留夢中虛假記憶  
+
+我的手心攤著 我的眼睛淚著 我的耳朵堵著 我的心臟撐著  
+我的指頭跑著 我的腮紅晾著 我的思緒噴著 我的美麗痛著  
+
+    </div>
+    <div id="lyric_restart" style="display: none;">
+
+# ReStart
+
+### 1. 怎哭了
+
+沉默嘴唇 還留著淚痕  
+然後孤獨的回家哭了  
+花花世界 情難自禁  
+但不要用償還做藉口  
+
+再讓我傷心  
+
+我讓你在夜裡矇住了雙眼親吻撒野  
+我跟你在夢裡演了一齣戲叫做毀滅  
+心栽進黑洞 忘了呼吸  
+心栽進黑洞 忘了呼吸  
+
+漸漸形成 哭泣的雲  
+
+妳可以尋找新的戀情  
+也可以不留一點音訊  
+但不要拿償還做藉口  
+再讓我傷心  
+
+### 2. Can't Stop My Love For You
+
+最近我常常發現 你走進我的夢中 低著頭我們無言以對  
+在放肆狂亂之中 就像在互相爭鬥 你遮住了我的光線  
+直達車開放發動 時間卻靜止不動 想放開緊握的雙手  
+在光芒閃耀瞬間 相信了你的眼眸 都已經成為了回憶  
+
+吹吹 催促的風 我們的愛赤裸  
+想想 想念的夢 你給的自由失控  
+快快 快要發瘋 今天也一樣溫柔  
+衝衝 衝破宇宙 求再給一次笑容  
+
+    </div>
+    <div id="lyric_dance" style="display: none;">
+
+# DANCE!
+
+### 1. 跳吧! Babe!
+### 2. 跳吧! Babe! (Unplugged Ver.)
+### 3. 跳吧! Babe! (Piano Ver.)
+
+月光落在你冷酷的肩膀  
+衝動吻上致命的語言  
+不滿足的沉醉在自我堅強  
+高漲的情緒因喜悅而飛揚  
+
+褪去所有矯飾赤裸告白  
+徘徊你所有喜好的舞台  
+嘲笑他們承諾的表面主張  
+帶著激情我們要唱到沸點  
+
+跳吧!BABE  
+
+我喜歡看著你隨節拍揮霍身體  
+讓音符帶著你狂舞吧飛向天際  
+
+    </div>
+    <div id="lyric_selfish" style="display: none;">
+
+# SELFISH
+
+### 1. We Make You High
+
+模仿翻唱　情歌矯情  
+你情我愛　熱血安靜  
+Breaking my soul  
+We make you high  
+
+模仿翻唱　情歌矯情  
+你情我愛　熱血安靜  
+Breaking my soul  
+We make you high  
+(We make you high)  
+
+Breaking my soul  
+We make you high  
+(We make you high)  
+(We make you high)  
+
+### 2. We Are So Beautiful
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+我抱著自己的膝蓋　蜷縮著  
+嗅到彩風的味道　灰塵嬉戲著  
+腦海中描繪的夢想　觀望著  
+土壤和風的表情　仍嘲笑著  
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+在黃昏之月來臨前　壯大自我  
+在積雨雲的前方　我不閃躲  
+在胸口鬱悶的時候　放逐自我  
+連同憂鬱隨煙火燦爛地爆炸  
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+我抱著自己的膝蓋　蜷縮著  
+嗅到彩風的味道　灰塵嬉戲著  
+腦海中描繪的夢想　觀望著  
+土壤和風的表情　仍嘲笑著  
+
+在黃昏之月來臨前　壯大自我  
+在積雨雲的前方　我不閃躲  
+在胸口鬱悶的時候　放逐自我  
+連同憂鬱隨煙火燦爛地爆炸  
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+We R So Beautiful  
+We R So Beautiful  
+We R So Beautiful  
+
+### 3. 我的
+
+走在任性放縱的日子裡心中的火焰澆不熄  
+站立在雨水中也拚命睜開眼卻已看不清  
+早點醒來吧 腦裡迴盪的聲音  
+早點醒來吧 手無寸鐵面對打擊  
+
+時間過去傷口它會癒合 但是留下的疤痕呢  
+淬鍊過的羽翼朝夢境奔去 奔去現實的樂園  
+別留在黑暗裡 崩壞的沙城看不見  
+早點醒來吧 殘留夢中虛假記憶  
+
+我的手心攤著 我的眼睛淚著 我的耳朵堵著 我的心臟撐著  
+我的指頭跑著 我的腮紅晾著 我的思緒噴著 我的美麗痛著  
+
+### 4. 自己
+
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　sorry  
+
+下雨了　花兒  
+誰為你撐起傘  
+一滴　兩滴　最後剝離  
+
+彩色臉龐　痕跡黑色淚液  
+一道　兩道　垂頭喪氣  
+
+季節更迭  
+想起美麗笑靨不會遲疑  
+花開又謝  
+撩起千姿百態不要孤癖  
+撥雲見日　記憶溫柔眼淚  
+提起勇氣　補上眼線  
+放縱任性語言　掌聲鼓勵  
+掌聲鼓勵  
+
+下雨了　花兒  
+誰為你撐起傘  
+一滴　兩滴　最後剝離  
+
+彩色臉龐　痕跡黑色淚液  
+一道　兩道　垂頭喪氣  
+
+季節更迭  
+想起美麗笑靨不會遲疑  
+花開又謝  
+撩起千姿百態不要孤癖  
+撥雲見日　記憶溫柔眼淚  
+提起勇氣　補上眼線  
+放縱任性語言　掌聲鼓勵  
+
+眼淚不是珍珠是鑽石  
+我只愛自己　送給自己的情書  
+是最美麗的歌詞  
+
+眼淚不是珍珠是鑽石  
+我只愛自己　送給自己的情書  
+是最美麗的歌詞  
+
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　sorry  
+
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　sorry  
+
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　baby  
+我只愛我自己　sorry  
+
+    </div>
+  </body>
+
+</html>
