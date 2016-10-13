@@ -53,6 +53,12 @@
             var top = document.getElementById(anchor).offsetTop;
             window.scrollTo(0, top - 10);
             $('.navbar-collapse').collapse('hide')
+            ga('send', {
+              hitType: 'event',
+              eventCategory: 'NavBar',
+              eventAction: 'click',
+              eventLabel: album + ' - ' + song
+            });
           });
         });
       });
