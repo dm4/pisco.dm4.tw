@@ -42,7 +42,8 @@
     <!-- Custom script -->
     <script>
       $(document).ready(function() {
-        document.getElementById('lyric').innerHTML = marked(document.getElementById('lyric_being_pisco').innerHTML);
+        var default_album = 'fish_in_the_clear_lake';
+        document.getElementById('lyric').innerHTML = marked(document.getElementById('lyric_' + default_album).innerHTML);
         $('ul.dropdown-menu > li > a').each(function() {
           $(this).click(function(event) {
             event.preventDefault();
@@ -88,6 +89,18 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">清澈的湖水裡有魚 <span class="caret"></span></a>
+              <ul album="fish_in_the_clear_lake" class="dropdown-menu">
+                <li><a href="#">1. 清澈的湖水裡有魚</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">每當唱這首歌的時候 <span class="caret"></span></a>
+              <ul album="every_time_i_sing_this_song" class="dropdown-menu">
+                <li><a href="#">1. 每當唱這首歌的時候</a></li>
+              </ul>
+            </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BEING P!SCO <span class="caret"></span></a>
               <ul album="being_pisco" class="dropdown-menu">
@@ -159,7 +172,97 @@
         <div class="col-sm-1 col-md-2 col-lg-3" style="background-color: black;"></div>
       </div>
     </div><!-- /.container -->
+    <div id="lyric_fish_in_the_clear_lake" style="display: none;">
+
+# 清澈的湖水裡有魚
+
+### 1. 清澈的湖水裡有魚
+
+月光下的音樂聲  
+佇每一擺的惜別  
+變成一蕊思念的花  
+
+咱鬥陣唱過的歌  
+你佮我講過的話  
+攏踮置心肝底  
+
+佇這款彩色的生活中  
+戇戇踅無人會了解  
+有時 青春像煙火  
+真美麗 煞袂閣轉來  
+毋通 袂記 當初的笑容  
+
+น้ำใสไหลเย็นเห็นตัวปลา แหวกว่ายไปมาดูไหวๆ  
+nam sai lai yen hen do bra waek wai pai ma doo wai wa  
+
+在這款彩色世界的中  
+戇戇踅無人會了解  
+有時 人生像煙火  
+若失去 無法度重來  
+感謝所有 美麗的風景  
+
+    </div>
+    <div id="lyric_every_time_i_sing_this_song" style="display: none;">
+
+# 每當唱這首歌的時候
+
+### 1. 每當唱這首歌的時候
+
+每當唱這首歌的時候 抬頭挺胸向前走  
+說好了 說好了 說好了 一起加油  
+每當唱這首歌的時候 雨天后那一道彩虹  
+墜落了 墜落了 墜落了 讓他接住我  
+
+當那時你說你 那時你說你  
+那時你說你 把勇氣用完了  
+那時我的心 早已經清脆的 被擊碎了  
+讓那些膽怯的 那些不安的  
+那些吵雜的聲音都過去了  
+要是我可以 我願意把力量 全借給你  
+
+哭著 笑著 大喊著 一起唱著歌  
+無憂無慮沒煩惱 我們都快樂  
+哭著 笑著 大喊著 一起唱著歌  
+無憂無慮沒煩惱 我們都快樂  
+
+每當唱這首歌的時候 想念是會湧上心頭  
+說什麼 說什麼 說什麼 你要放手  
+每當唱這首歌的時候 胸口還是會有點痛  
+為什麼 為什麼 為什麼 你轉身就走  
+
+當那時你說你 那時你說你  
+那時你說你  
+把堅持放下了  
+那時我的心早已經清脆的 被擊碎了  
+讓那些膽怯的 那些不安的  
+那些吵雜的聲音都過去了  
+這時你可以 輕輕閉上眼睛 自由飛去  
+
+每當唱這首歌的時候 想念是會湧上心頭  
+說什麼 說什麼 說什麼 你要放手  
+每當唱這首歌的時候 胸口還是會有點痛  
+為什麼 為什麼 為什麼 你轉身就走  
+
+la la la la la la la ～  
+
+哭著 笑著 大喊著 一起唱著歌  
+無憂無慮沒煩惱 我們都快樂  
+哭著 笑著 大喊著 一起唱著歌  
+無憂無慮沒煩惱 我們都快樂  
+
+每當唱這首歌的時候 想念是會湧上心頭  
+說什麼 說什麼 說什麼 你要放手  
+每當唱這首歌的時候 胸口還是會有點痛  
+為什麼 為什麼 為什麼 你轉身就走  
+
+每當唱這首歌的時候 抬頭挺胸向前走  
+說好了 說好了 說好了 一起加油  
+每當唱這首歌的時候 雨天后那一道彩虹  
+墜落了 墜落了 墜落了 讓他接住我  
+
+    </div>
     <div id="lyric_being_pisco" style="display: none;">
+
 # BEING P!SCO
 
 ### 1. 一起飛吧
